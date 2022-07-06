@@ -1,4 +1,5 @@
 -- This sql script lists all privileges of the MySQL users
-SELECT id, name FROM cities
+SELECT cities.id, cities.name
+FROM cities, states
 WHERE states.name = 'California'
-ORDER BY id
+ORDER BY cities.id
