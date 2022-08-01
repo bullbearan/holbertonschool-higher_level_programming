@@ -1,13 +1,8 @@
 #!/usr/bin/node
-import { argv } from 'node:process';
-let count;
-argv.forEach((val, index) => {
-  count = index;
-});
-if (count === 1) {
+if (process.argv.length === 2) {
   console.log('undefined is undefined');
-} else if (count === 2) {
-  console.log(argv[2] + ' is undefined');
+} else if (process.argv.length === 3) {
+  console.log(process.argv[2] + ' is undefined');
 } else {
-  console.log(argv[2] + ' is ' + argv[3]);
+  console.log(process.argv[2] + ' is ' + process.argv[3]);
 }

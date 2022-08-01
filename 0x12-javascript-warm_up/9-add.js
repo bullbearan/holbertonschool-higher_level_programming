@@ -1,9 +1,4 @@
 #!/usr/bin/node
-import { argv } from 'node:process';
-let count;
-argv.forEach((val, index) => {
-  count = index;
-});
 function add (a, b) {
   if (isNaN(a) || isNaN(b)) {
     console.log('NaN');
@@ -12,8 +7,8 @@ function add (a, b) {
   }
 }
 
-if (count < 3) {
+if (process.argv.length < 4) {
   console.log('NaN');
 } else {
-  console.log(add(argv[2], argv[3]));
+  console.log(add(process.argv[2], process.argv[3]));
 }

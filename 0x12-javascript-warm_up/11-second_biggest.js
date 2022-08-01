@@ -1,15 +1,10 @@
 #!/usr/bin/node
-import { argv } from 'node:process';
-let count;
-argv.forEach((val, index) => {
-  count = index;
-});
-if (count < 3) {
+if (process.argv.length < 4) {
   console.log(0);
 } else {
   const arr = [];
-  for (let i = 2; i < count + 1; i++) {
-    arr.push(Math.floor(argv[i]));
+  for (let i = 2; i < process.argv.length; i++) {
+    arr.push(Math.floor(process.argv[i]));
   }
   let ele = arr[0];
   let n = 0;

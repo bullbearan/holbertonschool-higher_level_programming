@@ -1,15 +1,10 @@
 #!/usr/bin/node
-import { argv } from 'node:process';
-let count;
-argv.forEach((val, index) => {
-  count = index;
-});
-if (count === 1) {
+if (process.argv.length === 2) {
   console.log('Not a number');
-} else if (count > 1) {
-  if (isNaN(argv[2])) {
+} else if (process.argv.length > 2) {
+  if (isNaN(process.argv[2])) {
     console.log('Not a number');
   } else {
-    console.log('My number: ' + Math.floor(argv[2]));
+    console.log('My number: ' + Math.floor(process.argv[2]));
   }
 }
